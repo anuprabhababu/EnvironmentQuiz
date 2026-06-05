@@ -33,14 +33,23 @@ async function loadResults(){
 
     });
 
-    // Update dashboard cards
-    document.getElementById("totalParticipants").innerText =
-        students.length;
+    const totalParticipants =
+        document.getElementById("totalParticipants");
 
-    document.getElementById("highestScore").innerText =
-        students.length > 0
-        ? `${students[0].score}/${students[0].totalQuestions}`
-        : "0";
+    const highestScore =
+        document.getElementById("highestScore");
+
+    if(totalParticipants){
+        totalParticipants.innerText =
+            students.length;
+    }
+
+    if(highestScore){
+        highestScore.innerText =
+            students.length > 0
+            ? `${students[0].score}/${students[0].totalQuestions}`
+            : "0";
+    }
 
     students.forEach((data,index) => {
 
@@ -68,12 +77,15 @@ async function loadResults(){
             data.class || "N/A";
 
         row.insertCell(3).innerText =
-            `${data.score || 0}/${data.totalQuestions || 0}`;
+            data.college || "N/A";
 
         row.insertCell(4).innerText =
-            `${data.completionTime || 0} sec`;
+            `${data.score || 0}/${data.totalQuestions || 0}`;
 
         row.insertCell(5).innerText =
+            `${data.completionTime || 0} sec`;
+
+        row.insertCell(6).innerText =
             data.submittedAt
             ? new Date(data.submittedAt).toLocaleString()
             : "N/A";

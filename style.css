@@ -126,3 +126,10 @@ h3{
     width:0%;
     transition:0.4s;
 }
+
+#question{
+    white-space: pre-line;
+    line-height: 1.7;
+    text-align:left;
+    margin-bottom:20px;
+}

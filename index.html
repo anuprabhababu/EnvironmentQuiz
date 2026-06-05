@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Environment Quiz</title>
+    <title>ISHRAE ENVIRONMENT DAY QUIZ<</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="startScreen" class="container">
 
-    <h1>Environment Quiz</h1>
+    <h1>ISHRAE ENVIRONMENT DAY QUIZ</h1>
 
     <input
         type="text"
         id="name"
         placeholder="Enter Name">
 
-    <br><br>
+    <br>
 
     <input
         type="text"
         id="studentClass"
         placeholder="Enter Class">
 
+    <input
+    type="text"
+    id="college"
+    placeholder="Enter College Name">
+    
     <br><br>
 
     <button id="startBtn">
         Start Quiz
     </button>
-
+ 
 </div>
 
 <div id="quizScreen" style="display:none" class="container">
@@ -46,6 +51,21 @@
     </button>
 
 </div>
+
+<h2 id="question"></h2>
+
+<img
+    id="questionImage"
+    style="
+        display:none;
+        max-width:400px;
+        width:100%;
+        margin:20px auto;
+        border-radius:12px;
+        box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    ">
+
+<div id="options"></div>
 
 <script type="module" src="script.js"></script>
 
