@@ -652,6 +652,7 @@ async function finishQuiz(){
             {
                 name: studentName,
                 class: studentClass,
+                college: collegeName,
                 score: score,
                 totalQuestions: questions.length,
                 completionTime: completionTime,
