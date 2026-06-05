@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Leaderboard</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            background:#f4f7fc;
+            padding:40px;
+        }
+
+        h1{
+            text-align:center;
+            color:#1e3c72;
+            margin-bottom:30px;
+        }
+
+        .dashboard{
+            max-width:1200px;
+            margin:auto;
+        }
+
+        .stats{
+            display:flex;
+            gap:20px;
+            margin-bottom:30px;
+        }
+
+        .card{
+            flex:1;
+            background:white;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+            text-align:center;
+        }
+
+        .card h2{
+            color:#1e3c72;
+            font-size:18px;
+        }
+
+        .card p{
+            margin-top:10px;
+            font-size:30px;
+            font-weight:bold;
+            color:#333;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        th{
+            background:#1e3c72;
+            color:white;
+            padding:15px;
+        }
+
+        td{
+            padding:15px;
+            text-align:center;
+        }
+
+        tr:nth-child(even){
+            background:#f8f9fc;
+        }
+
+        tr:hover{
+            background:#edf3ff;
+        }
+
+        .gold{
+            color:#d4a017;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        .silver{
+            color:#808080;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        .bronze{
+            color:#cd7f32;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>🏆 Environment Quiz Leaderboard</h1>
+
+    <div class="stats">
+
+        <div class="card">
+            <h2>Total Participants</h2>
+            <p id="totalParticipants">0</p>
+        </div>
+
+        <div class="card">
+            <h2>Highest Score</h2>
+            <p id="highestScore">0</p>
+        </div>
+
+    </div>
+
+    <table id="responseTable">
+
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Score</th>
+            <th>Completion Time</th>
+            <th>Submitted At</th>
+        </tr>
+
+    </table>
+
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
