@@ -133,3 +133,13 @@ h3{
     text-align:left;
     margin-bottom:20px;
 }
+
+body{
+    user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+}
+
+img{
+    pointer-events:none;
+}

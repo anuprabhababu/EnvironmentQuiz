@@ -638,6 +638,9 @@ async function finishQuiz(){
     const studentClass =
     document.getElementById("studentClass").value;
 
+    const collegeName =
+document.getElementById("college").value;
+
     const completionTime =
     Math.floor(
         (Date.now() - quizStartTime)/1000
@@ -652,8 +655,8 @@ async function finishQuiz(){
             {
                 name: studentName,
                 class: studentClass,
-                college: collegeName,
                 score: score,
+                college: collegeName,
                 totalQuestions: questions.length,
                 completionTime: completionTime,
                 responses: responses,
@@ -710,3 +713,40 @@ async function finishQuiz(){
     }
 
 }
+
+document.addEventListener("contextmenu", e => {
+    e.preventDefault();
+});
+
+document.addEventListener("copy", e => {
+    e.preventDefault();
+});
+
+document.addEventListener("cut", e => {
+    e.preventDefault();
+});
+
+document.addEventListener("selectstart", e => {
+    e.preventDefault();
+});
+
+//extra for phone
+let violations = 0;
+
+document.addEventListener("visibilitychange", () => {
+
+    if(document.hidden){
+
+        violations++;
+
+        if(violations >= 2){
+
+            alert("Quiz submitted due to multiple app switches.");
+
+            finishQuiz();
+
+        }
+
+    }
+
+});//done
